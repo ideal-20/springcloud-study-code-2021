@@ -12,6 +12,11 @@
     <artifactId>cloud-consumer-order80</artifactId>
 
     <dependencies>
+        <!-- eureka-client 不写版本号就是新版的 暂时是 3.0.2  -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
         <!-- 引入自定义通用模块 -->
         <dependency>
             <groupId>cn.ideal.springcloud</groupId>
