@@ -8,7 +8,7 @@ import org.springframework.web.client.RestTemplate;
 /**
  * @ClassName: ApplicationContextConfig
  * @Author: BWH_Steven
- * @Date: 2021/5/4 10:08
+ * @Date: 2021/5/4 11:21
  * @Version: 1.0
  */
 @Configuration
@@ -19,4 +19,3 @@ public class ApplicationContextConfig {
         return new RestTemplate();
     }
 }
-
