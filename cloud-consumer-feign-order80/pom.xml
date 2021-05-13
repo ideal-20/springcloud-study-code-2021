@@ -9,35 +9,35 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>cloud-consumerzk-order80</artifactId>
+    <artifactId>cloud-consumer-feign-order80</artifactId>
 
     <dependencies>
-
-        
-
-        <!-- SpringBoot整合Web组件 -->
+        <!--openfeign-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+        <!--eureka client-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+        <!-- 引入自己定义的api通用包，可以使用Payment支付Entity -->
+        <dependency>
+            <groupId>cn.ideal.springcloud</groupId>
+            <artifactId>cloud-api-commons</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <!--web-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <!-- SpringBoot整合zookeeper客户端 -->
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-zookeeper-discovery</artifactId>
-            <!--先排除自带的zookeeper高版本 防止与自己要用的低版本起冲突-->
-            <!--<exclusions>-->
-                <!--<exclusion>-->
-                    <!--<groupId>org.apache.zookeeper</groupId>-->
-                    <!--<artifactId>zookeeper</artifactId>-->
-                <!--</exclusion>-->
-            <!--</exclusions>-->
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
-        <!--添加自己低版本的 zookeeper 例如 3.4.9版本-->
-        <!--<dependency>-->
-            <!--<groupId>org.apache.zookeeper</groupId>-->
-            <!--<artifactId>zookeeper</artifactId>-->
-            <!--<version>3.4.9</version>-->
-        <!--</dependency>-->
+        <!--一般基础通用配置-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
@@ -55,7 +55,5 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
-
 
 </project>

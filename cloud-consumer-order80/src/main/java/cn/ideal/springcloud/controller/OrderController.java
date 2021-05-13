@@ -26,6 +26,7 @@ public class OrderController {
     @Resource
     private RestTemplate restTemplate;
 
+
     @GetMapping("/consumer/payment/create")
     public CommonResult<Payment> create(@RequestBody Payment payment) {
 
@@ -36,5 +37,11 @@ public class OrderController {
     public CommonResult<Payment> getPayment(@PathVariable("id") Long id) {
         return restTemplate.getForObject(PAYMENT_URL + "/payment/get/" + id, CommonResult.class);
     }
+
+    @GetMapping("/consumer/payment/lb")
+    public String getPaymentLB() {
+        return restTemplate.getForObject(PAYMENT_URL + "/payment/lb", String.class);
+    }
 }
+
 

@@ -71,6 +71,24 @@ public class PaymentController {
         return this.discoveryClient;
     }
 
+    @GetMapping(value = "/payment/lb")
+    public String getPaymentLB() {
+        //返回服务接口
+        return serverPort;
+    }
+
+    @GetMapping(value = "/payment/feign/timeout")
+    public String paymentFeignTimeout()
+    {
+        // 业务逻辑处理正确，但是需要耗费3秒钟
+        try {
+            TimeUnit.SECONDS.sleep(3);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return serverPort;
+    }
+
 }
 
 
