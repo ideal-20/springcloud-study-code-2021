@@ -1,5 +1,6 @@
-package cn.ideal.springcloud; /**
- * @ClassName: cn.ideal.springcloud.ConfigClientMain3355
+package cn.ideal.springcloud;
+/**
+ * @ClassName: ConfigClientMain3355
  * @Author: BWH_Steven
  * @Date: 2021/5/21 14:48
  * @Version: 1.0
